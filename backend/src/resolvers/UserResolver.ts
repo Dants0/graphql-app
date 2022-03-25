@@ -4,8 +4,8 @@ import { Query,Resolver } from "type-graphql";
 
 export class UserResolver{
 
-    @Query()
 
+    @Query(() => String)
     async hello(){
         return "Hello World";
     }
