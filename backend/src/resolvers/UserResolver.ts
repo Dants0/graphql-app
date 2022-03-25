@@ -1,0 +1,5 @@
+@Resol
+
+export class UserResolver{
+
+}
