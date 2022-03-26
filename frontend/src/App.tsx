@@ -13,6 +13,7 @@ const GET_USER = gql`
 type User = {
   id: string;
   name: string;
+  email:string;
 }
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <ul>
-        {data?.users.map(user => <li key={user.id}>{user.name}</li>)}
+        {data?.users.map(user => <li key={user.id}>{"Nome:" + user.name.concat("ID: " + user.id)}</li>)}
       </ul>
     </div>
   )

@@ -21,11 +21,13 @@ export class UserResolver{
 
     @Mutation(() => User)
     async createUser(
-        @Arg('name') name: string
+        @Arg('name') name: string,
+        @Arg('email') email: string,
     ){
         const user = {
             id:crypto.randomUUID(),
-            name
+            name,
+            email
         }
             this.data.push(user);
 

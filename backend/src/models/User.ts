@@ -8,4 +8,8 @@ export class User {
 
     @Field()
     name: string;
+    
+    
+    @Field()
+    email: string;
 }
