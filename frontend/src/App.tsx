@@ -9,6 +9,7 @@ const GET_USER = gql`
   }
 `;
 
+//typescript
 type User = {
   id: string;
   name: string;
