@@ -1,5 +1,7 @@
 import {gql, useMutation} from "@apollo/client";
+import {GET_USER} from "../App"
 import { FormEvent,useState } from "react";
+import * as styles from './newuserform.css'
 
 const CREATE_USER = gql`
     mutation($name:String! $email:String! $password:String!){
@@ -23,7 +25,7 @@ export function NewUserForm(){
 
 
         if(!name||!email||!password){
-            return alert("Please add informations");
+            return alert("Please add your informations");
         }
 
         await createUser({
@@ -31,17 +33,22 @@ export function NewUserForm(){
                 name,
                 email,
                 password
-            }
+            },
+            refetchQueries:[GET_USER]
         })
 
         console.log(data);
     }
     return(
-        <form onSubmit={handleCreateUser}>
-            <input type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Nome"/>
-            <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Email"/>
-            <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Password"/>
-            <button type="submit">Enviar</button>
-        </form>
+        <div className="FormVite">
+            <form onSubmit={handleCreateUser}>
+                <input type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Nome"/>
+                <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Email"/>
+                <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Password"/>
+                <button type="submit" className="btn">Enviar</button>
+            </form>
+        </div>
     )
 }
+
+export default NewUserForm
