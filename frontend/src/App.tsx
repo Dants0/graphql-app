@@ -9,13 +9,23 @@ const GET_USER = gql`
   }
 `;
 
-function App() {
-  const {data} = useQuery(GET_USER);
+type User = {
+  id: string;
+  name: string;
+}
 
-  console.log(data);
+function App() {
+  const {data , loading} = useQuery<{users:User[]}>(GET_USER);
+
+  if(loading) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <ul>
+        {data?.users.map(user => <li key={user.id}>{user.name}</li>)}
+      </ul>
     </div>
   )
 }
