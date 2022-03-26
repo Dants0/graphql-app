@@ -4,7 +4,7 @@ Utilizando code first
 
 ### Instalar todas as dependências do projeto
 
-### npm i frontend/backend
+### npm i no cd frontend e no cd backend
 
 ### Backend rodando na porta 4000
 
