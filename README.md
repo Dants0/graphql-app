@@ -1,5 +1,5 @@
 ### Aplicação utilizando GraphQL
-Utilizando code first, no qual você cadastra um usuario atraves do ApolloGraphQL e chama ele no seu Frontend
+Utilizando code first
 
 
 ### Instalar todas as dependências do projeto
