@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client"
+import { NewUserForm } from "./components/NewUserForm";
 
 const GET_USER = gql`
   query{
@@ -6,6 +7,7 @@ const GET_USER = gql`
       id
       name
       email
+      password
     }
   }
 `;
@@ -15,6 +17,7 @@ type User = {
   id: string;
   name: string;
   email:string;
+  password: string;
 }
 
 function App() {
@@ -25,11 +28,12 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <ul>
-        {data?.users.map(user => <li key={user.id}>{"Nome:" + user.name.concat("EMAIL: " + user.email)}</li>)}
-      </ul>
-    </div>
+      <div>
+        <ul>
+          {data?.users.map(user => <li key={user.id}>Nome:{user.name} || Email:{user.email} || Senha:{user.password}</li>)}
+        </ul>
+        <NewUserForm/>
+      </div>
   )
 }
 

@@ -23,15 +23,16 @@ export class UserResolver{
     async createUser(
         @Arg('name') name: string,
         @Arg('email') email: string,
+        @Arg('password') password: string,
     ){
         const user = {
             id:crypto.randomUUID(),
             name,
-            email
+            email,
+            password,
         }
-            this.data.push(user);
-
-            return user;
-
+        this.data.push(user);
+        
+        return user;
     }
 }
