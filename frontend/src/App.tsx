@@ -31,10 +31,10 @@ function App() {
 
   return (
       <div>
+        <NewUserForm/>
         <ul>
           {data?.users.map(user => <li key={user.id}>Nome:{user.name} || Email:{user.email} || Senha:{user.password}</li>)}
         </ul>
-        <NewUserForm/>
       </div>
   )
 }

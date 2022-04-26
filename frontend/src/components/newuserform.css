@@ -1,10 +1,43 @@
+body{
+    background: url(https://wallpaperaccess.com/full/99785.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
 
+form{
+    display: flex;
+}
+
+li{ 
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+input{
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-between;
+}
 
 .FormVite{
     color: gray;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
 }
 
 .btn{
-    width: 200px;
-    height: 200px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #cacacafa;
+
 }
